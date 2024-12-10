@@ -16,5 +16,4 @@ void Mouseoperation(int mine[Row][Col]);
 void Showmine(int mine[Row][Col]);
 void OpenNULL(int mine[Row][Col], int row, int col);
 void Findmine(int mine[Row][Col], int row, int col);
-void showmap(int mine[Row][Col]);
 void music();
