@@ -37,7 +37,6 @@ int main()
             if (ret == IDOK)
             {
                 Showmine(mine);
-                showmap(mine);
                 DEAD = false;
 
             }
@@ -53,7 +52,6 @@ int main()
             if (ret == IDOK)
             {
                 Showmine(mine);
-                showmap(mine);
                 WIN = false;
             }
             else if (ret == IDCANCEL)
@@ -90,20 +88,6 @@ void music()
     PlaySound(TEXT("music\\back"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 }
 
-
-
-void showmap(int mine[Row][Col])//没问题
-{
-    //打印棋盘
-    for (int a = 0; a < Row; a++)
-    {
-        for (int b = 0; b < Col; b++)
-        {
-            printf("%d ", mine[a][b]);
-        }
-        printf("\n");
-    }
-}
 
 
 
@@ -205,9 +189,6 @@ void Mouseoperation(int mine[Row][Col])
                 mine[c][r] -= 20;
                 OpenNULL(mine, c, r);
                 Findmine(mine, c, r);
-                //打印雷区
-                showmap(mine);
-
             }
         }
         else if (msg.message == WM_RBUTTONDOWN)//按右键插旗
