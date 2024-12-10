@@ -90,6 +90,21 @@ void music()
 
 
 
+void showmap(int mine[Row][Col])//没问题
+{
+    //打印棋盘
+    for (int a = 0; a < Row; a++)
+    {
+        for (int b = 0; b < Col; b++)
+        {
+            printf("%d ", mine[a][b]);
+        }
+        printf("\n");
+    }
+}
+
+
+
 void Showmine(int mine[Row][Col])
 {
     //把地图清零
@@ -189,6 +204,8 @@ void Mouseoperation(int mine[Row][Col])
                 OpenNULL(mine, c, r);
                 Findmine(mine, c, r);
                 //打印雷区
+                showmap(mine);
+
             }
         }
         else if (msg.message == WM_RBUTTONDOWN)//按右键插旗
